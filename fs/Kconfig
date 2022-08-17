@@ -13,6 +13,7 @@ if BLOCK
 source "fs/ext2/Kconfig"
 source "fs/ext3/Kconfig"
 source "fs/ext4/Kconfig"
+<<<<<<< HEAD
 
 config FS_XIP
 # execute in place
@@ -20,6 +21,8 @@ config FS_XIP
 	depends on EXT2_FS_XIP
 	default y
 
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 source "fs/jbd/Kconfig"
 source "fs/jbd2/Kconfig"
 
@@ -39,6 +42,25 @@ source "fs/gfs2/Kconfig"
 source "fs/ocfs2/Kconfig"
 source "fs/btrfs/Kconfig"
 source "fs/nilfs2/Kconfig"
+<<<<<<< HEAD
+=======
+source "fs/f2fs/Kconfig"
+
+config FS_DAX
+	bool "Direct Access (DAX) support"
+	depends on MMU
+	depends on !(ARM || MIPS || SPARC)
+	help
+	  Direct Access (DAX) can be used on memory-backed block devices.
+	  If the block device supports DAX and the filesystem supports DAX,
+	  then you can avoid using the pagecache to buffer I/Os.  Turning
+	  on this option will compile in support for DAX; you will need to
+	  mount the filesystem using the -o dax option.
+
+	  If you do not have a block device that is capable of using this,
+	  or if unsure, say N.  Saying Y will increase the size of the kernel
+	  by about 5kB.
+>>>>>>> fs/oreo-8.1.0-release-sanders
 
 endif # BLOCK
 
@@ -61,8 +83,11 @@ config FILE_LOCKING
           for filesystems like NFS and for the flock() system
           call. Disabling this option saves about 11k.
 
+<<<<<<< HEAD
 source "fs/crypto/Kconfig"
 
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 source "fs/notify/Kconfig"
 
 source "fs/quota/Kconfig"
@@ -91,7 +116,10 @@ if BLOCK
 menu "DOS/FAT/NT Filesystems"
 
 source "fs/fat/Kconfig"
+<<<<<<< HEAD
 source "fs/exfat/Kconfig"
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 source "fs/ntfs/Kconfig"
 
 endmenu
@@ -168,6 +196,10 @@ config HUGETLB_PAGE
 	def_bool HUGETLBFS
 
 source "fs/configfs/Kconfig"
+<<<<<<< HEAD
+=======
+source "fs/efivarfs/Kconfig"
+>>>>>>> fs/oreo-8.1.0-release-sanders
 
 endmenu
 
@@ -189,8 +221,11 @@ if MISC_FILESYSTEMS
 source "fs/adfs/Kconfig"
 source "fs/affs/Kconfig"
 source "fs/ecryptfs/Kconfig"
+<<<<<<< HEAD
 source "fs/sdcardfs/Kconfig"
 source "fs/esdfs/Kconfig"
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 source "fs/hfs/Kconfig"
 source "fs/hfsplus/Kconfig"
 source "fs/befs/Kconfig"
@@ -213,8 +248,11 @@ source "fs/pstore/Kconfig"
 source "fs/sysv/Kconfig"
 source "fs/ufs/Kconfig"
 source "fs/exofs/Kconfig"
+<<<<<<< HEAD
 source "fs/f2fs/Kconfig"
 source "fs/efivarfs/Kconfig"
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 
 endif # MISC_FILESYSTEMS
 
@@ -275,9 +313,12 @@ endif # NETWORK_FILESYSTEMS
 source "fs/nls/Kconfig"
 source "fs/dlm/Kconfig"
 
+<<<<<<< HEAD
 config FILE_TABLE_DEBUG
 	bool "Enable FILE_TABLE_DEBUG"
 	help
 	  This option enables debug of the open files using a global filetable
 
+=======
+>>>>>>> fs/oreo-8.1.0-release-sanders
 endmenu
